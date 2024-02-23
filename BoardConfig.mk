@@ -34,10 +34,13 @@ TARGET_SCREEN_DENSITY := 560
 # TARGET_KERNEL_CONFIG := exynos9810-starlte_defconfig
 KERNEL_DIR := device/samsung/starlte-kernel
 LOCAL_KERNEL := $(KERNEL_DIR)/Image
-BOARD_KERNEL_PREBUILT_DT := $(KERNEL_DIR)/dt.img
+BOARD_KERNEL_PREBUILT_DT := device/samsung/starlte-kernel/dt.img
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+
+PRODUCT_COPY_FILES += \
+	$(BOARD_KERNEL_PREBUILT_DT):dt.img
 
 # properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
