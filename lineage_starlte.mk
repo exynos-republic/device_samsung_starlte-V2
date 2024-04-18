@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Non AB device 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
@@ -28,11 +31,11 @@ TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 TARGET_BOOT_ANIMATION_RES := 1440
 
-# Inherit some common VortexAOSP stuff
-$(call inherit-product, device/samsung/exynos9810-common/vortex-common.mk)
+# Inherit some common Lineage stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 ## Device identifier, this must come after all inclusions
-PRODUCT_NAME := starlte
+PRODUCT_NAME := lineage_starlte
 PRODUCT_DEVICE := starlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G960F
