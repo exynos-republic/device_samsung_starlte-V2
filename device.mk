@@ -24,3 +24,14 @@ $(call inherit-product, vendor/samsung/starlte/starlte-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Prebuilt kernel
+TARGET_KERNEL_DIR ?= device/samsung/starlte-kernel
+TARGET_PREBUILT_KERNEL := $(TARGET_KERNEL_DIR)/Image
+BOARD_KERNEL_PREBUILT_DT := $(TARGET_KERNEL_DIR)/dt.img
+
+PRODUCT_COPY_FILES += \
+    $(TARGET_PREBUILT_KERNEL):kernel
+
+PRODUCT_COPY_FILES += \
+	$(BOARD_KERNEL_PREBUILT_DT):dt.img
