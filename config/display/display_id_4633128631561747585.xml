@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<displayConfiguration>
+    <densityMapping>
+        <density>
+            <height>1440</height>
+            <width>2960</width>
+            <density>560</density>
+        </density>
+    </densityMapping>
+
+    <!-- <screenBrightnessMap>
+        <point>
+            <value>0.0</value>
+            <nits>2.0</nits>
+        </point>
+        <point>
+            <value>0.7142857142857</value>
+            <nits>500.0</nits>
+        </point>
+        <point>
+            <value>1.0</value>
+            <nits>700.0</nits>
+        </point>
+    </screenBrightnessMap> -->
+
+    <highBrightnessMode enabled="true">
+        <!-- Max Brightness value: 44800 == 700 nits -->
+        <transitionPoint>0.7142857142857</transitionPoint> <!-- 32000/44800 -->
+        <minimumLux>5000.00000000</minimumLux>
+        <timing>
+            <!-- Always allow, since we dont have any hardware HBM mode, its just 
+                colors boosted by framework -->
+            <timeWindowSecs>0</timeWindowSecs>
+            <timeMaxSecs>0</timeMaxSecs>
+            <timeMinSecs>0</timeMinSecs>
+        </timing>
+        <thermalStatusLimit>critical</thermalStatusLimit>
+        <allowInLowPowerMode>false</allowInLowPowerMode>
+        <minimumHdrPercentOfScreen>0</minimumHdrPercentOfScreen>
+        <!--sdrHdrRatioMap, backed by spline, must have at least two entries -->
+                <sdrHdrRatioMap>
+            <point>
+                <sdrNits>2.0</sdrNits>
+                <hdrRatio>2.25</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>500.0</sdrNits>
+                <hdrRatio>2.25</hdrRatio>
+            </point>
+        </sdrHdrRatioMap>
+    </highBrightnessMode>
+
+    <thermalThrottling>
+        <brightnessThrottlingMap>
+            <brightnessThrottlingPoint>
+                <thermalStatus>emergency</thermalStatus>
+                <!-- Throttling to half the brightness if phone's hot -->
+                <brightness>0.50</brightness>
+            </brightnessThrottlingPoint>
+        </brightnessThrottlingMap>
+    </thermalThrottling>
+</displayConfiguration>

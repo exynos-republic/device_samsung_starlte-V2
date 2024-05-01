@@ -35,3 +35,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(BOARD_KERNEL_PREBUILT_DT):dt.img
+
+# Displayconfig
+PRODUCT_COPY_FILES += \
+    device/samsung/starlte/config/display/display_id_4633128631561747585.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4633128631561747585.xml
